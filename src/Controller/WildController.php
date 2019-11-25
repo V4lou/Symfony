@@ -8,19 +8,22 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\Mapping as ORM;
 
-
+/**
+ * @Route("/wild")
+ */
 class WildController extends AbstractController
 {
 
     /**
      * @param string $slug The slugger
-     * @Route("/wild/show/{slug}", requirements={"slug"="[a-z0-9-]+$"}, defaults={"slug" = null}, name="wild_show_slug")
+     * @Route("/show/{slug}", requirements={"slug"="[a-z0-9-]+$"}, defaults={"slug" = null}, name="wild_show_slug")
      */
     public function show(?string $slug): Response
     {
         $slugWithoutDash = str_replace("-", " ", $slug);
         $slugInMag = ucwords($slugWithoutDash);
         return $this->render('/wild/show.html.twig', ['slug' => $slugInMag]);
+
     }
     /**
     * Show all rows from Program’s entity
