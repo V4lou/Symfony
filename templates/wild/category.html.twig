@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ categoryName }}{% endblock %}
+{% block body %}
+    {% for films in program %}
+        <ul>
+            <li>{{ films.id }}</li>
+            <li>{{ films.title }}</li>
+            <li>{{ films.summary }}</li>
+        </ul>
+    {% endfor %}
+{% endblock %}
