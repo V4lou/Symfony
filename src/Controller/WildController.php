@@ -137,7 +137,7 @@ class WildController extends AbstractController
     public function showBySeason(int $id) :response {
         $season = $this->getDoctrine()
             ->getRepository(Season::class)
-            ->findOneBy(['id' =>$id]);
+            ->findOneBy(['program' =>$id]);
         $program = $this->getDoctrine()
             ->getRepository(Program::class)
             ->findOneBy(['id' =>$id]);
