@@ -25,7 +25,10 @@ class Program
      * @ORM\Column(type="text")
      */
     private $summary;
-
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Season", mappedBy="program")
+     */
+    private $seasons;
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */

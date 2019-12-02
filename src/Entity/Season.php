@@ -29,7 +29,7 @@ class Season
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="seasons")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Program", inversedBy="seasons")
      * @ORM\JoinColumn(nullable=false)
      */
     private $program;
@@ -44,10 +44,6 @@ class Season
      */
     private $number;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Program", inversedBy="seasons")
-     */
-    private $program_id;
 
 
 
@@ -141,18 +137,6 @@ class Season
     public function setNumber(int $number): self
     {
         $this->number = $number;
-
-        return $this;
-    }
-
-    public function getProgramId(): ?Program
-    {
-        return $this->program_id;
-    }
-
-    public function setProgramId(?Program $program_id): self
-    {
-        $this->program_id = $program_id;
 
         return $this;
     }
