@@ -11,3 +11,21 @@ body {
 .link-navbar {
     color: white;
 }
+.box-title-serie-one {
+    text-align: center;
+    margin: 4em;
+}
+.title-serie-one {
+    text-align: center;
+    font-size: 2.5em;
+    border-bottom: 3px solid #303030;
+}
+.describe-serie {
+    margin-right: 12em;
+    margin-left: 12em;
+    font-size: 1em;
+    margin-bottom: 2em;
+}
+.episode-list {
+    margin-left: 4em;
+}

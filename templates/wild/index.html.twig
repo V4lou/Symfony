@@ -5,9 +5,14 @@
 {% block body %}
     <h1>Toutes les séries de la table program : </h1>
     {% for program in programs %}
-        <div>
-            <h2>{{ loop.index }} / {{ program.title }} - Catégorie : {{ program.category.name }}</h2>
-            <p>{{ program.summary }}</p>
+        <div class="card" style="width: 28rem;">
+            <div class="card-body">
+                <a href="/wild/show/program/{{ program.title|lower|replace({' ': '-'}) }}">
+                    <h5 class="card-title">{{ loop.index }} / {{ program.title }}</h5>
+                </a>
+                <h6 class="card-subtitle mb-2 text-muted">Catégorie : {{ program.category.name }}</h6>
+                <p class="card-text">{{ program.summary }}</p>
+            </div>
         </div>
     {% else %}
         Aucune série trouvée.
@@ -16,7 +21,6 @@
         Retour à l'accueil
     </a>
     {# templates/index.html.twig #}
-    <a href="{{ path('wild_show', { 'slug': "walking-dead" }) }}">
         Testing show() method from WildController with a real program s slug.
     </a>
     <br>
