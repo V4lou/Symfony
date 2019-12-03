@@ -86,7 +86,7 @@ class Season
         return $this;
     }
 
-    public function getProgram(): ?Category
+    public function getProgram()
     {
         return $this->program;
     }
