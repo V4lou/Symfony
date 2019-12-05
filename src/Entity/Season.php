@@ -35,7 +35,7 @@ class Season
     private $program;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Episode", mappedBy="season")
+     * @ORM\OneToMany(targetEntity="App\Entity\Episode", mappedBy="season", orphanRemoval=true)
      */
     private $episodes;
 
@@ -49,7 +49,6 @@ class Season
 
     public function __construct()
     {
-        $this->program = new ArrayCollection();
         $this->episodes = new ArrayCollection();
     }
 

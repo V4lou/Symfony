@@ -6,6 +6,7 @@ use App\Entity\Category;
 use App\Entity\Episode;
 use App\Entity\Program;
 use App\Entity\Season;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -138,19 +139,27 @@ class WildController extends AbstractController
         $season = $this->getDoctrine()
             ->getRepository(Season::class)
             ->findOneBy(['program' =>$id]);
-       /* $program = $this->getDoctrine()
-            ->getRepository(Program::class)
-            ->findOneBy(['id' =>$id]);*/
-        /*$episode = $this->getDoctrine()
-            ->getRepository(Episode::class)
-            ->findBy(['season' =>$id]);*/
-        $program = $season->getProgram();
-        $episode = $season->getEpisodes();
+            $program = $season->getProgram();
+            $episode = $season->getEpisodes();
 
         return $this->render('wild/show_season.html.twig', [
             'season' => $season,
             'program' => $program,
             'episode' => $episode,
         ]);
+
+    }
+    /**
+     * @Route("/show/program/episode/{id}")
+     */
+    public function showEpisode(Episode $episode): Response
+    {
+        $season = $episode->getSeason();
+        $program = $season->getProgram();
+        return $this->render('wild/show_episode.html.twig', [
+        'season' => $season,
+        'program' => $program,
+        'episode' => $episode,
+    ]);
     }
 }
