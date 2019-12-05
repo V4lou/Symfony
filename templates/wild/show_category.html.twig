@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block title %}Add a new category{% endblock %}
+
+{% block body %}
+    {% for categoryName in category %}
+        <ul>
+            <li>{{ categoryName.name }}</li>
+        </ul>
+    {% endfor %}
+{% endblock %}

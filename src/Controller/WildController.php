@@ -162,4 +162,16 @@ class WildController extends AbstractController
         'episode' => $episode,
     ]);
     }
+    /**
+     * @Route("/show/categoryName/")
+     */
+    public function showCategory() :Response
+    {
+        $categories = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->findAll();
+        return $this->render('wild/show_category.html.twig', [
+            'category' => $categories,
+        ]);
+    }
 }
