@@ -120,7 +120,6 @@ class Program
 
         return $this;
     }
-
     public function removeActor(Actor $actor): self
     {
         if ($this->actors->contains($actor)) {
