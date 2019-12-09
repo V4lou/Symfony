@@ -38,3 +38,6 @@ body {
     margin-top: 5em;
     padding-left: 8em;
 }
+.summary-block {
+    width: 200px;
+}

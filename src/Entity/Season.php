@@ -52,9 +52,6 @@ class Season
         $this->episodes = new ArrayCollection();
     }
 
-    /**
-     * @ORM\Column(type="integer")
-     */
 
     public function getId(): ?int
     {
@@ -90,7 +87,7 @@ class Season
         return $this->program;
     }
 
-    public function setProgram(?Category $program): self
+    public function setProgram($program): self
     {
         $this->program = $program;
 
