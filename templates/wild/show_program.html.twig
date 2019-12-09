@@ -12,7 +12,16 @@
             <p>Categorie : {{ program.category.name }}</p>
             <a href="/wild/show/program/season/{{ program.id }}">Voir les saisons</a>
         </div>
+
     </div>
+    <strong>Acteur :</strong>
+    <ul>
+        {% for actor in program.actors %}
+            <li>{{ actor.name }} </li>
+        {% else %}
+            <li>Aucun acteur pour cette série</li>
+        {% endfor %}
+    </ul>
 
     <a href="{{ path('wild_index') }}">
         Retour à l'accueil

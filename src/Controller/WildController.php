@@ -2,6 +2,7 @@
 // src/Controller/WildController.php
 namespace App\Controller;
 
+use App\Entity\Actor;
 use App\Entity\Category;
 use App\Entity\Episode;
 use App\Entity\Program;
@@ -172,6 +173,20 @@ class WildController extends AbstractController
             ->findAll();
         return $this->render('wild/show_category.html.twig', [
             'category' => $categories,
+        ]);
+    }
+    /**
+     * @Route("/actor/{id}")
+     */
+    public function showActor(int $id) :Response
+    {
+        $actors = $this->getDoctrine()
+            ->getRepository(Actor::class)
+            ->findOneBy(['id' =>$id]);
+        $films = $actors->getPrograms();
+        return $this->render('wild/show_actor.html.twig', [
+            'actor' => $actors,
+            'program' => $films,
         ]);
     }
 }

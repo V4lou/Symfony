@@ -41,3 +41,8 @@ body {
 .summary-block {
     width: 200px;
 }
+.title-actor {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 2em;
+}

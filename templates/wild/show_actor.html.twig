@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block title %}Acteur {{ actor.name }}{% endblock %}
+
+{% block body %}
+    <p class="title-actor">{{ actor.name }}</p>
+    <div class="box-actor-films">
+        <ul>
+            {% for films in program %}
+                <li><a href="/program/{{ films.id }}">{{ films.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}
