@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Season;
 use Faker;
 use App\entity\Category;
 use App\Entity\Program;
@@ -10,13 +11,13 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-class ActorFixtures extends Fixture implements DependentFixtureInterface
+class SeasonFixtures extends Fixture implements DependentFixtureInterface
 {
     public function getDependencies()
     {
         return [ProgramFixtures::class];
     }
-    const ACTORS = ['John Doe', 'Mike Joe', 'Phil Hurston', 'Andrew Marks', 'Jane McVom'];
+
     public function load(ObjectManager $manager)
     {
        /* foreach (self::ACTORS as $key => $actorName) {
@@ -29,14 +30,19 @@ class ActorFixtures extends Fixture implements DependentFixtureInterface
         }*/
         $faker  =  Faker\Factory::create('en_US');
 
-            for ($i = 1; $i <= 50; $i++) {
-                $actor = new Actor();
-                $actorName = $faker->name;
-                $actor->setName($actorName);
+            for ($i = 1; $i <= 10; $i++) {
+                $season = new Season();
+                $saesonYear = $faker->year();
+                $seasonDescription = $faker->text();
+                $seasonNumber = $faker->biasedNumberBetween();
+                $season->setDescription($seasonDescription);
+                $season->setNumber($seasonNumber);
+                $this->addReference('season_'.$i, $season);
+                $season->setYear($saesonYear);
                 for ($j = 0; $j <= 5; $j++) {
-                    $actor->addProgram($this->getReference('program_'.$j));
+                    $season->setProgram($this->getReference('program_'.$j));
                 }
-                $manager->persist($actor);
+                $manager->persist($season);
             }
 
 

@@ -5,18 +5,19 @@ namespace App\DataFixtures;
 use Faker;
 use App\entity\Category;
 use App\Entity\Program;
+use App\Entity\Episode;
 use App\Entity\Actor;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-class ActorFixtures extends Fixture implements DependentFixtureInterface
+class EpisodeFixtures extends Fixture implements DependentFixtureInterface
 {
     public function getDependencies()
     {
-        return [ProgramFixtures::class];
+        return [SeasonFixtures::class];
     }
-    const ACTORS = ['John Doe', 'Mike Joe', 'Phil Hurston', 'Andrew Marks', 'Jane McVom'];
+
     public function load(ObjectManager $manager)
     {
        /* foreach (self::ACTORS as $key => $actorName) {
@@ -29,14 +30,18 @@ class ActorFixtures extends Fixture implements DependentFixtureInterface
         }*/
         $faker  =  Faker\Factory::create('en_US');
 
-            for ($i = 1; $i <= 50; $i++) {
-                $actor = new Actor();
-                $actorName = $faker->name;
-                $actor->setName($actorName);
-                for ($j = 0; $j <= 5; $j++) {
-                    $actor->addProgram($this->getReference('program_'.$j));
+            for ($i = 1; $i <= 10; $i++) {
+                $episode = new Episode();
+                $episodeTitle = $faker->slug;
+                $episodeNumber = $faker->biasedNumberBetween();
+                $episodeSynopsis = $faker->text;
+                $episode->setTitle($episodeTitle);
+                $episode->setNumber($episodeNumber);
+                $episode->setSynopsis($episodeSynopsis);
+                for ($j = 1; $j <= 10; $j++) {
+                    $episode->setSeason($this->getReference('season_'.$j));
                 }
-                $manager->persist($actor);
+                $manager->persist($episode);
             }
 
 
