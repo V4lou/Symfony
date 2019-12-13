@@ -140,6 +140,7 @@ class WildController extends AbstractController
         $season = $this->getDoctrine()
             ->getRepository(Season::class)
             ->findOneBy(['program' =>$id]);
+
             $program = $season->getProgram();
             $episode = $season->getEpisodes();
 
