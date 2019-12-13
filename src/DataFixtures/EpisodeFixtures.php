@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Services\Slugify;
 use Faker;
 use App\entity\Category;
 use App\Entity\Program;
@@ -20,24 +21,21 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
 
     public function load(ObjectManager $manager)
     {
-       /* foreach (self::ACTORS as $key => $actorName) {
 
-            $actor = new Actor();
-            $actor->setName($actorName);
-            $actor->addProgram($this->getReference('program_0'));
-            $manager->persist($actor);
-            $this->addReference('actor_' . $key, $actor);
-        }*/
         $faker  =  Faker\Factory::create('en_US');
 
             for ($i = 1; $i <= 20; $i++) {
                 $episode = new Episode();
+                $slug = new Slugify();
                 $episodeTitle = $faker->word();
+                $slug = $slug->generate($episodeTitle);
+
                 $episodeNumber = $faker->biasedNumberBetween();
                 $episodeSynopsis = $faker->text;
                 $episode->setTitle($episodeTitle);
                 $episode->setNumber($episodeNumber);
                 $episode->setSynopsis($episodeSynopsis);
+                $episode->setSlug($slug);
 
                 for ($j = 1; $j <= 10; $j++) {
                     $numberSeason = rand(1,10);
