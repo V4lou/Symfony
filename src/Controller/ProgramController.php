@@ -45,11 +45,15 @@ class ProgramController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($program);
             $entityManager->flush();
+            $adress = $this->getParameter('mailer_from');
+            $body =  $this->renderView(
+                'program\mail\notification.html.twig',
+                array('program' => $program));
             $email = (new Email())
-                ->from('valentin.fauchere@gmail.com')
-                ->to('valentin.fauchere@gmail.com')
+                ->from($adress)
+                ->to($adress)
                 ->subject('Une nouvelle série vient d\'être publiée !')
-                ->html('<p>Une nouvelle série vient d\'être publiée sur Wild Séries !</p>');
+                ->html($body);
 
             $mailer->send($email);
             return $this->redirectToRoute('program_index');
