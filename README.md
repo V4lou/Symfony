@@ -60,8 +60,17 @@ Code ici: https://github.com/V4lou/Symfony/tree/entityType
  
  -----------------------------------------------------------------------------------------------------------------------------
  
- Quête Symfony 16
+ Quête Symfony 17
  
  Lien vidéo: https://drive.google.com/open?id=1XxHeYjUOirPFAWM0bVh5Geo-b5bYuLDI
+ 
+ Code ici: https://github.com/V4lou/Symfony/tree/email
+ 
+ 
+ -----------------------------------------------------------------------------------------------------------------------------
+ 
+ Quête Symfony 17
+ 
+ Lien vidéo: https://drive.google.com/open?id=1UaZWIfp1NtBhDlbGMi3csp9OjKZIuPk_
  
  Code ici: https://github.com/V4lou/Symfony/tree/services_introduction
