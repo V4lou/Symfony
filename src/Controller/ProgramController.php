@@ -46,7 +46,7 @@ class ProgramController extends AbstractController
             $entityManager->persist($program);
             $entityManager->flush();
             $email = (new Email())
-                ->from('smtp.mailtrap.io')
+                ->from('valentin.fauchere@gmail.com')
                 ->to('valentin.fauchere@gmail.com')
                 ->subject('Une nouvelle série vient d\'être publiée !')
                 ->html('<p>Une nouvelle série vient d\'être publiée sur Wild Séries !</p>');
