@@ -46,3 +46,17 @@ body {
     text-align: center;
     margin-top: 2em;
 }
+.h1_comment {
+    text-align: center;
+    color: #303030;
+    margin: 2em;
+}
+.comment-box {
+    text-align: center;
+    margin: 8em;
+}
+
+.comment-text {
+    font-size: 1em;
+    font-style: italic;
+}

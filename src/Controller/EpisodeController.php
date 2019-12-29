@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Episode;
+use App\Form\CommentType;
 use App\Form\EpisodeType;
 use App\Repository\EpisodeRepository;
 use App\Services\Slugify;
@@ -56,6 +57,8 @@ class EpisodeController extends AbstractController
      */
     public function show(Episode $episode): Response
     {
+
+
         return $this->render('episode/show.html.twig', [
             'episode' => $episode,
         ]);

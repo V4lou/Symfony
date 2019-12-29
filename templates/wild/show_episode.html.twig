@@ -7,4 +7,20 @@
         </p>
     </div>
     <p class="text-syno">{{ episode.synopsis }}</p>
+    <h1 class="h1_comment">Commentaires</h1>
+    {% for comment in comments %}
+        <div class="comment-box">
+           <p class="comment-text"> {{ comment.comment }}</p>
+            <p> Rate: {{ comment.rate }}</p>
+        </div>
+    {% endfor %}
+    {% if app.user %}
+        {{ form_start(form) }}
+        {{ form_widget(form.comment) }}
+        {{ form_widget(form.rate) }}
+        <button type="submit" name="submit">Poster le commentaire</button>
+        {{ form_end(form) }}
+    {% endif %}
+
+
 {% endblock %}
