@@ -60,16 +60,27 @@ Code ici: https://github.com/V4lou/Symfony/tree/entityType
  
  -----------------------------------------------------------------------------------------------------------------------------
  
- Quête Symfony 16
+  Quête Symfony 16
  
  Lien vidéo: https://drive.google.com/open?id=1XxHeYjUOirPFAWM0bVh5Geo-b5bYuLDI
  
  Code ici: https://github.com/V4lou/Symfony/tree/services_introduction
  
- ---------------------------------------------------------------------------------------------------------------------------
+ ----------------------------------------------------------------------------------------------------------------------------
  
- Quête Symfony 17
+ Quête Symfony 17 email
  
- Lien vidéo: https://drive.google.com/open?id=1UaZWIfp1NtBhDlbGMi3csp9OjKZIuPk_
+ Lien vidéo: https://drive.google.com/file/d/1UaZWIfp1NtBhDlbGMi3csp9OjKZIuPk_/view?usp=sharing
  
  Code ici: https://github.com/V4lou/Symfony/tree/email
+ 
+ 
+ ---------------------------------------------------------------------------------------------------------------------------
+ 
+ Quête Symfony 18 utilisateurs
+ 
+ Lien vidéo: https://youtu.be/VMZd5eM14no
+ 
+ Code ici: https://github.com/V4lou/Symfony/tree/utilisateurs
+ 
+   *Note: le code pour la gestion du formulaire des commentaire se trouve dans le WildController à la méthode showEpisode.*
