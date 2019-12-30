@@ -12,6 +12,13 @@
         <div class="comment-box">
            <p class="comment-text"> {{ comment.comment }}</p>
             <p> Rate: {{ comment.rate }}</p>
+            {% if app.user == comment.author %}
+                <form method="post" action="{{ path('program_delete', {'id': comment.id}) }}" onsubmit="return confirm('Confirmez-vous la supression de ce commentaire?');">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ program.id) }}">
+                    <button class="btn btn-danger">Supprimer mon commentaire</button>
+                </form>
+            {% endif %}
         </div>
     {% endfor %}
     {% if app.user %}

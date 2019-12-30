@@ -25,8 +25,17 @@ class UserFixtures extends Fixture
             $subscriber,
             'subscriberpassword'
         ));
-
         $manager->persist($subscriber);
+
+       /* $subscriber = new User();
+        $subscriber->setEmail('test@monsite.com');
+        $subscriber->setRoles(['ROLE_SUBSCRIBER']);
+        $subscriber->setPassword($this->passwordEncoder->encodePassword(
+            $subscriber,
+            'test'
+        ));
+
+        $manager->persist($subscriber);*/
 
         // Création d’un utilisateur de type “administrateur”
         $admin = new User();
