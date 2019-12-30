@@ -68,7 +68,7 @@ Code ici: https://github.com/V4lou/Symfony/tree/entityType
  
  ----------------------------------------------------------------------------------------------------------------------------
  
- Quête Symfony 17
+ Quête Symfony 17 email
  
  Lien vidéo: https://drive.google.com/file/d/1UaZWIfp1NtBhDlbGMi3csp9OjKZIuPk_/view?usp=sharing
  
