@@ -74,6 +74,3 @@ Code ici: https://github.com/V4lou/Symfony/tree/entityType
  
  Code ici: https://github.com/V4lou/Symfony/tree/email
  
-
- 
-
