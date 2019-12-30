@@ -84,3 +84,14 @@ Code ici: https://github.com/V4lou/Symfony/tree/entityType
  Code ici: https://github.com/V4lou/Symfony/tree/utilisateurs
  
    *Note: le code pour la gestion du formulaire des commentaire se trouve dans le WildController à la méthode showEpisode.*
+   
+ --------------------------------------------------------------------------------------------------------------------------
+ 
+ Quête Symfony 19 sécurisation des routes
+ 
+ Lien vidéo: https://youtu.be/uezttLMhZFo
+ 
+ Code ici: https://github.com/V4lou/Symfony/tree/secure_route
+ 
+  *Note: Le code pour la supression du commentaire par l'utilisateur se trouve dans le CommentController**
+  
