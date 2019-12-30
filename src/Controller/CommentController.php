@@ -49,6 +49,18 @@ class CommentController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+    /**
+     * @Route("/{id}, {episodeId}", name="comment_delete", methods={"DELETE"})
+     */
+    public function delete(Request $request, Comment $comment, $episodeId ): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$comment->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($comment);
+            $entityManager->flush();
+        }
 
+        return $this->redirectToRoute('show_episode_season', array('id' => $episodeId));
+    }
 
 }

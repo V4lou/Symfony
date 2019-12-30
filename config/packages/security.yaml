@@ -38,6 +38,7 @@ security:
         -  { path: ^/season, roles: ROLE_ADMIN }
         -  { path: ^/actor, roles: ROLE_ADMIN }
         - { path: ^/wild/category, roles: ROLE_ADMIN }
+        - { path: ^/wild, roles: ROLE_SUBSCRIBER }
         # ...
     role_hierarchy:
         ROLE_SUBSCRIBER: ROLE_USER
