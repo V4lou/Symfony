@@ -70,7 +70,7 @@ Code ici: https://github.com/V4lou/Symfony/tree/entityType
  
  Quête Symfony 17
  
- Lien vidéo: https://drive.google.com/open?id=1UaZWIfp1NtBhDlbGMi3csp9OjKZIuPk_
+ Lien vidéo: https://drive.google.com/file/d/1UaZWIfp1NtBhDlbGMi3csp9OjKZIuPk_/view?usp=sharing
  
  Code ici: https://github.com/V4lou/Symfony/tree/email
  
