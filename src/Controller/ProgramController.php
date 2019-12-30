@@ -12,9 +12,11 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Services\Slugify;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/program")
+ * @IsGranted("ROLE_ADMIN")
  */
 class ProgramController extends AbstractController
 {
