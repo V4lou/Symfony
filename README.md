@@ -95,3 +95,11 @@ Code ici: https://github.com/V4lou/Symfony/tree/entityType
  
   *Note: Le code pour la supression du commentaire par l'utilisateur se trouve dans le CommentController**
   
+ ---------------------------------------------------------------------------------------------------------------------------
+ 
+ Quête Symfony 20 Inscription d'un utilisateur
+ 
+ Lien vidéo: https://youtu.be/KK2a0lbo9_s
+ 
+ Code ici: https://github.com/V4lou/Symfony/tree/inscription
+  
