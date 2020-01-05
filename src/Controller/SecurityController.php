@@ -42,7 +42,6 @@ class SecurityController extends AbstractController
     }
     /**
      * @Route("/register", name="app_register")
-     * @IsGranted("ROLE_USER")
      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator): Response
     {
@@ -61,7 +60,7 @@ class SecurityController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-
+            $user->setRoles(['ROLE_SUBSCRIBER']);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
@@ -79,5 +78,25 @@ class SecurityController extends AbstractController
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
+    }
+    /**
+     * @Route("/account", name="app_account")
+     * @IsGranted("ROLE_SUBSCRIBER")
+     */
+    public function account(): Response
+    {
+
+
+        return $this->render('registration/account.html.twig');
+    }
+    /**
+     * @Route("/my-profile", name="app_profile")
+     * @IsGranted("ROLE_SUBSCRIBER")
+     */
+    public function profile(): Response
+    {
+
+
+        return $this->render('registration/profile.html.twig');
     }
 }
