@@ -4,6 +4,10 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProgramRepository")
  */
@@ -18,11 +22,14 @@ class Program
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le titre ne peut pas être vide")
+     * @Assert\Length(max="255", maxMessage="Le titre saisie {{ value }} est trop long, elle ne devrait pas dépasser {{ limit }} caractères")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="Le résumé ne peut pas être vide")
      */
     private $summary;
     /**
@@ -63,6 +70,14 @@ class Program
     public function getTitle(): ?string
     {
         return $this->title;
+    }
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addConstraint(new UniqueEntity([
+            'fields' => 'title',
+            'message' => 'Le titre est déjà utilisé',
+        ]));
+
     }
 
     public function setTitle(string $title): self
