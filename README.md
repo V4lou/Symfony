@@ -102,4 +102,12 @@ Code ici: https://github.com/V4lou/Symfony/tree/entityType
  Lien vidéo: https://youtu.be/KK2a0lbo9_s
  
  Code ici: https://github.com/V4lou/Symfony/tree/inscription
+ 
+ ---------------------------------------------------------------------------------------------------------------------------
   
+Quête Symfony 21 Validation
+
+Lien vidéo: https://youtu.be/ZT0hZz-kqUE
+
+Code ici: https://github.com/V4lou/Symfony/tree/validation
+
